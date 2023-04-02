@@ -19,6 +19,15 @@ type Config struct {
 		ServerShutdownTimeout time.Duration
 	}
 
+	Postgres struct {
+		Host              string `env:"POSTGRES_HOST,notEmpty"`
+		Port              string `env:"POSTGRES_PORT,notEmpty"`
+		User              string `env:"POSTGRES_USER,notEmpty"`
+		Password          string `env:"POSTGRES_PASSWORD,notEmpty"`
+		Database          string `env:"POSTGRES_DB,notEmpty"`
+		ConnectionTimeout time.Duration
+	}
+
 	RabbitMQ RabbitMQ
 }
 
@@ -32,6 +41,12 @@ func Read() (*Config, error) {
 	config.HTTPAPI.Addr = fmt.Sprintf(":%s", config.HTTPAPI.Addr)
 
 	return setStaticSettings(&config), nil
+}
+
+func (c *Config) PostgresDSN() string {
+	return fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s connect_timeout=%d sslmode=disable",
+		c.Postgres.Host, c.Postgres.Port, c.Postgres.User, c.Postgres.Password, c.Postgres.Database, c.Postgres.ConnectionTimeout,
+	)
 }
 
 func setStaticSettings(cfg *Config) *Config {
