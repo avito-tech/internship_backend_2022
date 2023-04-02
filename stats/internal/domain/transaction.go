@@ -23,3 +23,10 @@ type Transaction struct {
 	CreatedAt time.Time
 	UpdatedAt time.Time
 }
+
+type TransactionByServiceID struct {
+	ID        uuid.UUID
+	ServiceID uuid.UUID
+	Amount    float64
+	CreatedAt time.Time
+}
