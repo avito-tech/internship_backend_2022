@@ -1,0 +1,741 @@
+basePath: /
+definitions:
+  account-management-service_internal_controller_http_v1.accountDepositInput:
+    properties:
+      amount:
+        type: integer
+      id:
+        type: integer
+    required:
+    - amount
+    - id
+    type: object
+  account-management-service_internal_controller_http_v1.accountRoutes:
+    type: object
+  account-management-service_internal_controller_http_v1.accountTransferInput:
+    properties:
+      amount:
+        type: integer
+      from:
+        type: integer
+      to:
+        type: integer
+    required:
+    - amount
+    - from
+    - to
+    type: object
+  account-management-service_internal_controller_http_v1.accountWithdrawInput:
+    properties:
+      amount:
+        type: integer
+      id:
+        type: integer
+    required:
+    - amount
+    - id
+    type: object
+  account-management-service_internal_controller_http_v1.authRoutes:
+    type: object
+  account-management-service_internal_controller_http_v1.getBalanceInput:
+    properties:
+      id:
+        type: integer
+    required:
+    - id
+    type: object
+  account-management-service_internal_controller_http_v1.getHistoryInput:
+    properties:
+      account_id:
+        type: integer
+      limit:
+        type: integer
+      offset:
+        type: integer
+      sort_type:
+        type: string
+    required:
+    - account_id
+    type: object
+  account-management-service_internal_controller_http_v1.getReportInput:
+    properties:
+      month:
+        type: integer
+      year:
+        type: integer
+    required:
+    - month
+    - year
+    type: object
+  account-management-service_internal_controller_http_v1.operationRoutes:
+    properties:
+      service.Operation: {}
+    type: object
+  account-management-service_internal_controller_http_v1.productRoutes:
+    type: object
+  account-management-service_internal_controller_http_v1.reservationCreateInput:
+    properties:
+      account_id:
+        type: integer
+      amount:
+        type: integer
+      order_id:
+        type: integer
+      product_id:
+        type: integer
+    required:
+    - account_id
+    - amount
+    - order_id
+    - product_id
+    type: object
+  account-management-service_internal_controller_http_v1.reservationRefundInput:
+    properties:
+      order_id:
+        type: integer
+    required:
+    - order_id
+    type: object
+  account-management-service_internal_controller_http_v1.reservationRevenueInput:
+    properties:
+      account_id:
+        type: integer
+      amount:
+        type: integer
+      order_id:
+        type: integer
+      product_id:
+        type: integer
+    required:
+    - account_id
+    - amount
+    - order_id
+    - product_id
+    type: object
+  account-management-service_internal_controller_http_v1.reservationRoutes:
+    type: object
+  account-management-service_internal_controller_http_v1.signInInput:
+    properties:
+      password:
+        type: string
+      username:
+        maxLength: 32
+        minLength: 4
+        type: string
+    required:
+    - password
+    - username
+    type: object
+  account-management-service_internal_controller_http_v1.signUpInput:
+    properties:
+      password:
+        type: string
+      username:
+        maxLength: 32
+        minLength: 4
+        type: string
+    required:
+    - password
+    - username
+    type: object
+  echo.HTTPError:
+    properties:
+      message: {}
+    type: object
+  internal_controller_http_v1.accountDepositInput:
+    properties:
+      amount:
+        type: integer
+      id:
+        type: integer
+    required:
+    - amount
+    - id
+    type: object
+  internal_controller_http_v1.accountRoutes:
+    type: object
+  internal_controller_http_v1.accountTransferInput:
+    properties:
+      amount:
+        type: integer
+      from:
+        type: integer
+      to:
+        type: integer
+    required:
+    - amount
+    - from
+    - to
+    type: object
+  internal_controller_http_v1.accountWithdrawInput:
+    properties:
+      amount:
+        type: integer
+      id:
+        type: integer
+    required:
+    - amount
+    - id
+    type: object
+  internal_controller_http_v1.authRoutes:
+    type: object
+  internal_controller_http_v1.getBalanceInput:
+    properties:
+      id:
+        type: integer
+    required:
+    - id
+    type: object
+  internal_controller_http_v1.getHistoryInput:
+    properties:
+      account_id:
+        type: integer
+      limit:
+        type: integer
+      offset:
+        type: integer
+      sort_type:
+        type: string
+    required:
+    - account_id
+    type: object
+  internal_controller_http_v1.getReportInput:
+    properties:
+      month:
+        type: integer
+      year:
+        type: integer
+    required:
+    - month
+    - year
+    type: object
+  internal_controller_http_v1.operationRoutes:
+    properties:
+      service.Operation: {}
+    type: object
+  internal_controller_http_v1.productRoutes:
+    type: object
+  internal_controller_http_v1.reservationCreateInput:
+    properties:
+      account_id:
+        type: integer
+      amount:
+        type: integer
+      order_id:
+        type: integer
+      product_id:
+        type: integer
+    required:
+    - account_id
+    - amount
+    - order_id
+    - product_id
+    type: object
+  internal_controller_http_v1.reservationRefundInput:
+    properties:
+      order_id:
+        type: integer
+    required:
+    - order_id
+    type: object
+  internal_controller_http_v1.reservationRevenueInput:
+    properties:
+      account_id:
+        type: integer
+      amount:
+        type: integer
+      order_id:
+        type: integer
+      product_id:
+        type: integer
+    required:
+    - account_id
+    - amount
+    - order_id
+    - product_id
+    type: object
+  internal_controller_http_v1.reservationRoutes:
+    type: object
+  internal_controller_http_v1.signInInput:
+    properties:
+      password:
+        type: string
+      username:
+        maxLength: 32
+        minLength: 4
+        type: string
+    required:
+    - password
+    - username
+    type: object
+  internal_controller_http_v1.signUpInput:
+    properties:
+      password:
+        type: string
+      username:
+        maxLength: 32
+        minLength: 4
+        type: string
+    required:
+    - password
+    - username
+    type: object
+host: localhost:8089
+info:
+  contact:
+    email: changaz.d@gmail.com
+    name: Changaz Danial
+  description: This is a service for managing accounts, reservations, products and
+    operations.
+  title: Account Management Service
+  version: "1.0"
+paths:
+  /api/v1/accounts/:
+    get:
+      consumes:
+      - application/json
+      description: Get balance
+      parameters:
+      - description: input
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/account-management-service_internal_controller_http_v1.getBalanceInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/account-management-service_internal_controller_http_v1.accountRoutes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+      security:
+      - JWT: []
+      summary: Get balance
+      tags:
+      - accounts
+  /api/v1/accounts/create:
+    post:
+      consumes:
+      - application/json
+      description: Create account
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/account-management-service_internal_controller_http_v1.accountRoutes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+      security:
+      - JWT: []
+      summary: Create account
+      tags:
+      - accounts
+  /api/v1/accounts/deposit:
+    post:
+      consumes:
+      - application/json
+      description: Deposit
+      parameters:
+      - description: input
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/account-management-service_internal_controller_http_v1.accountDepositInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+      security:
+      - JWT: []
+      summary: Deposit
+      tags:
+      - accounts
+  /api/v1/accounts/transfer:
+    post:
+      consumes:
+      - application/json
+      description: Transfer
+      parameters:
+      - description: input
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/account-management-service_internal_controller_http_v1.accountTransferInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+      security:
+      - JWT: []
+      summary: Transfer
+      tags:
+      - accounts
+  /api/v1/accounts/withdraw:
+    post:
+      consumes:
+      - application/json
+      description: Withdraw
+      parameters:
+      - description: input
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/account-management-service_internal_controller_http_v1.accountWithdrawInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+      security:
+      - JWT: []
+      summary: Withdraw
+      tags:
+      - accounts
+  /api/v1/operations/history:
+    get:
+      consumes:
+      - application/json
+      description: Get history of operations
+      parameters:
+      - description: input
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/internal_controller_http_v1.getHistoryInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/internal_controller_http_v1.operationRoutes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+      security:
+      - JWT: []
+      summary: Get history
+      tags:
+      - operations
+  /api/v1/operations/report-file:
+    get:
+      consumes:
+      - application/json
+      description: Get report file
+      parameters:
+      - description: input
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/internal_controller_http_v1.getReportInput'
+      produces:
+      - text/csv
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+      security:
+      - JWT: []
+      summary: Get report file
+      tags:
+      - operations
+  /api/v1/operations/report-link:
+    get:
+      consumes:
+      - application/json
+      description: Get link to report
+      parameters:
+      - description: input
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/internal_controller_http_v1.getReportInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/internal_controller_http_v1.operationRoutes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+      security:
+      - JWT: []
+      summary: Get report link
+      tags:
+      - operations
+  /api/v1/products/create:
+    post:
+      consumes:
+      - application/json
+      description: Create product
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/account-management-service_internal_controller_http_v1.productRoutes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+      security:
+      - JWT: []
+      summary: Create product
+      tags:
+      - products
+  /api/v1/products/getById:
+    get:
+      consumes:
+      - application/json
+      description: Get product by id
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/account-management-service_internal_controller_http_v1.productRoutes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+      security:
+      - JWT: []
+      summary: Get product by id
+      tags:
+      - products
+  /api/v1/reservations/create:
+    post:
+      consumes:
+      - application/json
+      description: Create reservation
+      parameters:
+      - description: input
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/account-management-service_internal_controller_http_v1.reservationCreateInput'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/account-management-service_internal_controller_http_v1.reservationRoutes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+      security:
+      - JWT: []
+      summary: Create reservation
+      tags:
+      - reservations
+  /api/v1/reservations/refund:
+    post:
+      consumes:
+      - application/json
+      description: Refund reservation
+      parameters:
+      - description: input
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/account-management-service_internal_controller_http_v1.reservationRefundInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+      security:
+      - JWT: []
+      summary: Refund reservation
+      tags:
+      - reservations
+  /api/v1/reservations/revenue:
+    post:
+      consumes:
+      - application/json
+      description: Revenue reservation
+      parameters:
+      - description: input
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/account-management-service_internal_controller_http_v1.reservationRevenueInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+      security:
+      - JWT: []
+      summary: Revenue reservation
+      tags:
+      - reservations
+  /auth/sign-in:
+    post:
+      consumes:
+      - application/json
+      description: Sign in
+      parameters:
+      - description: input
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/account-management-service_internal_controller_http_v1.signInInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/account-management-service_internal_controller_http_v1.authRoutes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+      summary: Sign in
+      tags:
+      - auth
+  /auth/sign-up:
+    post:
+      consumes:
+      - application/json
+      description: Sign up
+      parameters:
+      - description: input
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/account-management-service_internal_controller_http_v1.signUpInput'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/account-management-service_internal_controller_http_v1.authRoutes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+      summary: Sign up
+      tags:
+      - auth
+securityDefinitions:
+  JWT:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+
+  postgres:
+    container_name: postgres
+    image: postgres
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+  app:
+    container_name: app
+    build: .
+    volumes:
+      - ./logs:/logs
+      - ./secrets:/secrets
+    env_file:
+      - .env
+    ports:
+      - "${HTTP_PORT}:${HTTP_PORT}"
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+volumes:
+  pg-data:
